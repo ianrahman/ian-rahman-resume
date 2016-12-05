@@ -81,27 +81,27 @@ class Life {
         let experience0 = Experience(title: "Producer and Photographer",
                                      company: "iamramen industries",
                                      dates: "August 2008 to June 2012",
-                                     description: "Started a small, solo business out of my dorm room in which I produced audio and shot photos for independent artists and clients. I conducted needs assessments and learned to tailor my deliverables to the specifications of my customer.")
+                                     description: "I started a small, solo business out of my dorm room to produce audio and photos for independent artists. It was a great opportunity to learn client management and develop a sense of design and personal aesthetic.")
         let experience1 = Experience(title: "Volunteer and Multimedia Coordinator",
                                      company: "The ComedyCures Foundation",
                                      dates: "September 2008 to August 2014",
-                                     description: "Coming soon!")
-        let experience2 = Experience(title: "Analyst",
-                                     company: "Analytic Partners",
-                                     dates: "October 2014 to October 2015",
-                                     description: "Coming soon!")
-        let experience3 = Experience(title: "Producer and Drummer",
+                                     description: "Opening live comedy shows helped me get comfortable with public speaking. Figuring out how to systematize a decade's worth of digital media and documents helped me develop a penchant for organization.")
+        let experience2 = Experience(title: "Producer and Drummer",
                                      company: "New Immunity",
                                      dates: "June 2012 to December 2015",
-                                     description: "Coming soon!")
-        let experience4 = Experience(title: "Co-Founder and Management Educator",
+                                     description: "We rocked hard and made some beautiful music. By applying marketing concepts I learned in grad school to our brand, we carved out a solid niche in Charlottesville performing electronic music with live instruments at local venues.")
+        let experience3 = Experience(title: "Co-Founder and Management Educator",
                                      company: "BioTrep",
                                      dates: "March 2014 to December 2015",
-                                     description: "Coming soon!")
+                                     description: "BioTrep birthed from a question: Is it possible to teach someone who's motivated but otherwise unexperienced to create a financially viable project in biotech? We developed a program that swept the UVA Entrepreneurship Cup's top nine out of ten prizes in 2014 and spent 2015 working on our operations and financial structure. The system we developed to manage numerous project members on multiple teams and incentivize collaboration and accountability was entirely novel and exciting to build. Though other aspects of life put this passion project on indefinite hiatus, it was one of my most rewarding experiences.")
+        let experience4 = Experience(title: "Analyst",
+                                     company: "Analytic Partners",
+                                     dates: "October 2014 to October 2015",
+                                     description: "Grad school showed me how much fun I could have problem solving, so I sought that out in my first job after. At AP I worked on marketing strategies for Fortune 100 companies through the application of data analytics. I loved working here and learned a great deal about segmentation analysis, pricing models, and operating in a service industry at a high caliber.")
         let experience5 = Experience(title: "iOS Instructor and Developer",
                                      company: "Flatiron School",
                                      dates: "May 2016 to Present",
-                                     description: "Teach people how to be Swift badasses.")
+                                     description: "This has been such a rewarding experience. I work on a team to help plan the future of the school's immersive programs, write curriculum to teach iOS development from loops to subclassing OperationQueue, manage multiple teams through the development of apps released to the App Store, and constantly push the bounds of my own skills and knowledge to help students understand Swift.")
         
         return [experience0, experience1, experience2, experience3, experience4, experience5]
     }
@@ -119,7 +119,7 @@ class Life {
         let education2 = Education(title: "iOS Development Immersive",
                                    school: "Flatiron School",
                                    graduation: 2016,
-                                   description: "Worked on a team to develop and push to the App Store a project written in Objective-C and Swift called EasyOut")
+                                   description: "Intensive program with final focus on development of iOS applicaiton called EasyOut written in Objective-C and Swift")
         
         return [education0, education1, education2]
     }
@@ -132,7 +132,7 @@ class Life {
         let interest3 = "Driving on back roads"
         let interest4 = "Exploring new places"
         let interest5 = "Spending time with family"
-        let interest6 = "Making music, especially with friends"
+        let interest6 = "Making anything, especially with friends"
         
         return [interest0, interest1, interest2, interest3, interest4, interest5, interest6]
     }
