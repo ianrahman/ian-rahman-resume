@@ -1,5 +1,5 @@
 # The Curriculum Vitae of Ian Rahman
 
-A Swift playground that shares a little about who I am. Hope you enjoy!
+A Swift 3 playground to share a little of who I am. Hope you enjoy!
 
-> PS- Remember to open the debugger console 🙃
+> PS- Remember to open the debugger console 😘
