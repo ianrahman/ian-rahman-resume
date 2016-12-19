@@ -60,7 +60,7 @@ class Life {
     
     func getSkills() -> [Skill] {
         
-        let skill0 = Skill(name: "Swift", level: .medium)
+        let skill0 = Skill(name: "Swift", level: .high)
         let skill1 = Skill(name: "Objective-C", level: .medium)
         let skill2 = Skill(name: "Project Management", level: .high)
         let skill3 = Skill(name: "Beard Growing", level: .high)
@@ -93,7 +93,7 @@ class Life {
         let experience3 = Experience(title: "Co-Founder and Management Educator",
                                      company: "BioTrep",
                                      dates: "March 2014 to December 2015",
-                                     description: "BioTrep birthed from a question: Is it possible to teach someone who's motivated but otherwise unexperienced to create a financially viable project in biotech? We developed a program that swept the UVA Entrepreneurship Cup's top nine out of ten prizes in 2014 and spent 2015 working on our operations and financial structure. The system we developed to manage numerous project members on multiple teams and incentivize collaboration and accountability was entirely novel and exciting to build. Though other aspects of life put this passion project on indefinite hiatus, it was one of my most rewarding experiences.")
+                                     description: "BioTrep arose from a question: Is it possible to teach someone who's motivated but otherwise unexperienced to create a financially viable project in biotech? We developed a program that swept the UVA Entrepreneurship Cup's top nine out of ten prizes in 2014 and spent 2015 working on our operations and financial structure. The system we developed to manage numerous project members on multiple teams and incentivize collaboration and accountability was entirely novel and exciting to build. Though other aspects of life put this passion project on indefinite hiatus, it was one of my most rewarding experiences.")
         let experience4 = Experience(title: "Analyst",
                                      company: "Analytic Partners",
                                      dates: "October 2014 to October 2015",
