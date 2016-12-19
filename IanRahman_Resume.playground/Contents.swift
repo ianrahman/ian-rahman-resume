@@ -209,6 +209,7 @@ protocol LivesLife {
 protocol SelfPromotes {
     
     func giveAutobiography()
+    func tellElevatorPitch()
 }
 
 
@@ -283,6 +284,10 @@ extension SelfPromotes where Self: Person {
         
         print("\nFun Fact: \(self.funFact)")
     }
+    
+    func tellElevatorPitch() {
+        print("I’ve always been the \"tech guy\" among my friends and family, and in a sense I always knew I’d eventually become a developer. In middle school I taught myself basic HTML and CSS to run a little website where to share photos of my classmates and travels. In high school I figured out how to bypass the admin’s content blockers so we could get on Facebook and watch YouTube in the library. In college I took just enough programming courses to seriously pique my interest. Grad school taught me how to learn fast and manage both people and resources. I used those skills to start a company and fell in love with being in the trenches to build something from the ground up. When the opportunity arose I committed myself to learning to code. It’s how I put to use my passion for solving problems with creativity and analytical thinking. I’m excited to work with teams of smart, driven people to build products and platforms to bring people together and add value to the world.\n")
+    }
 }
 
 
@@ -301,4 +306,5 @@ func makeMe() -> Ian {
 
 let ian = makeMe()
 
+ian.tellElevatorPitch()
 ian.giveAutobiography()
