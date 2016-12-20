@@ -9,7 +9,7 @@ import UIKit
  
  You can find more detailed information about my experience and education on my LinkedIn profile: https://www.linkedin.com/in/ianrahman
  
- PS- Don't forget to open the debugger console!
+ PS- Don't forget to open the debugger console when you run this code!
  
  */
 
