@@ -40,7 +40,6 @@ class Ian {
 }
 
 
-// TODO: - Turn data into separate properites
 class Life {
     
     func getSkills() -> [Skill] {
@@ -63,27 +62,39 @@ class Life {
         let experience0 = Experience(title: "Producer and Photographer",
                                      company: "iamramen industries",
                                      dates: "August 2008 to June 2012",
-                                     description: "I started a small, solo business out of my dorm room to produce audio and photos for independent artists. It was a great opportunity to learn client management and develop a sense of design and personal aesthetic.")
+                                     description: "I started a small, solo business out of my dorm room to produce audio and photos for independent artists. It was a great opportunity to learn client management and develop a sense of design and personal aesthetic.",
+                                     components: [""])
         let experience1 = Experience(title: "Volunteer and Multimedia Coordinator",
                                      company: "The ComedyCures Foundation",
                                      dates: "September 2008 to August 2014",
-                                     description: "Opening live comedy shows helped me get comfortable with public speaking. Figuring out how to systematize a decade's worth of digital media and documents helped me develop a penchant for organization.")
+                                     description: "Opening live comedy shows helped me get comfortable with public speaking. Figuring out how to systematize a decade's worth of digital media and documents helped me develop a penchant for organization.",
+                                     components: [""])
         let experience2 = Experience(title: "Producer and Drummer",
                                      company: "New Immunity",
                                      dates: "June 2012 to December 2015",
-                                     description: "We rocked hard and made some beautiful music. By applying marketing concepts I learned in grad school to our brand, we carved out a solid niche in Charlottesville performing electronic music with live instruments at local venues.")
+                                     description: "We rocked hard and made some beautiful music. By applying marketing concepts I learned in grad school to our brand, we carved out a solid niche in Charlottesville performing electronic music with live instruments at local venues.",
+                                     components: [""])
         let experience3 = Experience(title: "Co-Founder and Management Educator",
                                      company: "BioTrep",
                                      dates: "March 2014 to December 2015",
-                                     description: "BioTrep arose from a question: Is it possible to teach someone who's motivated but otherwise unexperienced to create a financially viable project in biotech? We developed a program that swept the UVA Entrepreneurship Cup's top nine out of ten prizes in 2014 and spent 2015 working on our operations and financial structure. The system we developed to manage numerous project members on multiple teams and incentivize collaboration and accountability was entirely novel and exciting to build. Though other aspects of life put this passion project on indefinite hiatus, it was one of my most rewarding experiences.")
+                                     description: "BioTrep arose from a question: Is it possible to teach someone who's motivated but otherwise unexperienced to create a financially viable project in biotech? We developed a program that swept the UVA Entrepreneurship Cup's top nine out of ten prizes in 2014 and spent 2015 working on our operations and financial structure. The system we developed to manage numerous project members on multiple teams and incentivize collaboration and accountability was entirely novel and exciting to build. Though other aspects of life put this passion project on indefinite hiatus, it was one of my most rewarding experiences.",
+                                     components: ["Designed and taught a program that swept the UVA Entrepreneurship Cup's top 9/10 cash prizes",
+                                                  "Trained teams in management and marketing techniques, pitch building, and presentation skills",
+                                                  "Developed a novel project and team structure to incentivize collaboration across projects",
+                                                  "Introduced agile management practices to ensure efficient and effective meetings"])
         let experience4 = Experience(title: "Analyst",
                                      company: "Analytic Partners",
                                      dates: "October 2014 to October 2015",
-                                     description: "Grad school showed me how much fun I could have problem solving, so I sought that out in my first job after. At AP I worked on marketing strategies for Fortune 100 companies through the application of data analytics. I loved working here and learned a great deal about segmentation analysis, pricing models, and operating in a service industry at a high caliber.")
+                                     description: "Grad school showed me how much fun I could have problem solving, so I sought that out in my first job after. At AP I worked on marketing strategies for Fortune 100 companies through the application of data analytics. I loved working here and learned a great deal about segmentation analysis, pricing models, and operating in a service industry at a high caliber.",
+                                     components: [""])
         let experience5 = Experience(title: "iOS Instructor and Developer",
                                      company: "Flatiron School",
                                      dates: "May 2016 to Present",
-                                     description: "This has been such a rewarding experience. I work on a team to help plan the future of the school's immersive programs, write curriculum to teach iOS development from loops to subclassing OperationQueue, manage multiple teams through the development of apps released to the App Store, and constantly push the bounds of my own skills and knowledge to help students understand Swift.")
+                                     description: "This has been such a rewarding experience. I work on a team to help plan the future of the school's immersive programs, write curriculum to teach iOS development from loops to subclassing OperationQueue, manage multiple teams through the development of apps released to the App Store, and constantly push the bounds of my own skills and knowledge to help students understand Swift.",
+                                     components: ["Worked on a team to help design a plan for the future of the school's immersive programs",
+                                                  "Wrote curriculum to teach iOS development from loops to subclassing OperationQueue",
+                                                  "Managed multiple teams through the development of apps released to the App Store",
+                                                  "Constantly pushed the bounds of my own skills and knowledge to help students understand Swift"])
         return [experience0, experience1, experience2, experience3, experience4, experience5]
     }
     
@@ -141,6 +152,7 @@ struct Experience {
     // TODO: - Change dates type to (Date, Date)
     let dates: String
     let description: String
+    let components: [String]
 }
 
 
@@ -227,7 +239,11 @@ extension SelfPromotes where Self: Person {
         print("\nSkills:")
         for skill in self.skills { print("    \(skill.name) (Level: \(skill.level.rawValue))") }
         print("\nExperience:")
-        for experience in self.experience.reversed() { print("    \(experience.title)\n    \(experience.company)\n    \(experience.dates)\n    \(experience.description)\n") }
+        for experience in self.experience.reversed() {
+            print("    \(experience.title) at \(experience.company)\n    \(experience.dates)\n    \(experience.description)")
+            for component in experience.components { print("    + \(component)") } // Nested for loop -- gross!
+            print()
+        }
         print("\nEducation:")
         for education in self.education.reversed() { print("    \(education.title)\n    \(education.school)\n    \(education.graduation)\n    \(education.description)\n") }
         print("\nInterests:")
