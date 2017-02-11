@@ -5,7 +5,7 @@ import UIKit
  # The Curriculum Vitae of Ian Alexander Rahman
  
  
- Hi! My name is Ian, and I'm an iOS developer and instructor of iOS development at the Flatiron School in New York City.
+ Hi! My name is Ian, and I'm an iOS developer based in New York City.
  
  You can find more detailed information about my experience and education on my LinkedIn profile: https://www.linkedin.com/in/ianrahman
  
@@ -13,6 +13,7 @@ import UIKit
  
  */
 
+// MARK: - Ingredients for an Ian
 class Ian {
     
     let life = Life()
@@ -25,8 +26,8 @@ class Ian {
     var interests = [String]()
     var funFact = String()
     
-    init(name: String) {
-        self.name = name
+    init(named: String) {
+        self.name = named
         if name == "Ian Alexander Rahman" {
             self.role = "Swifty Swashbuckler"
             self.location = Location.nyc
@@ -37,6 +38,7 @@ class Ian {
             self.funFact = facts[Int(arc4random_uniform(UInt32(facts.count)))]
         }
     }
+    
 }
 
 
@@ -63,17 +65,24 @@ class Life {
                                      company: "iamramen industries",
                                      dates: "August 2008 to June 2012",
                                      description: "I started a small, solo business out of my dorm room to produce audio and photos for independent artists. It was a great opportunity to learn client management and develop a sense of design and personal aesthetic.",
-                                     components: [""])
-        let experience1 = Experience(title: "Volunteer and Multimedia Coordinator",
+                                     components: ["Conducted needs assessment and maintain interpersonal client interaction to determine specific and unique solutions",
+                                                  "Produced, engineered, recorded, and mixed music and spoken audio tailored specifically to audience or client needs",
+                                                  "Use new/social media and web analytics tools for marketing and promotion"])
+        let experience1 = Experience(title: "Volunteer and Technology Strategist",
                                      company: "The ComedyCures Foundation",
-                                     dates: "September 2008 to August 2014",
-                                     description: "Opening live comedy shows helped me get comfortable with public speaking. Figuring out how to systematize a decade's worth of digital media and documents helped me develop a penchant for organization.",
-                                     components: [""])
+                                     dates: "September 2008 to Present",
+                                     description: "Though my work with ComedyCures was initially limited to running multimedia at the live Laughing Lunch events, I've since helped plan the use of and implement digital tools and services to increase the organization's efficiency and impact.",
+                                     components: ["Spearheading implementation of Salesforce Nonprofit Success Pack and onboarding staff to better manage donor and audience data",
+                                                  "Working with administration to design and plan implementation of iOS app to share multimedia and enable direct communication with audience",
+                                                  "Researched and migrated organization onto services with nonprofit-friendly packages, which led to a reduction in digital monthly overhead of 70%",
+                                                  "Identified bottlenecks in the storage of media and documents; systematized digital archives for increased accessibility, efficiency, and future-proofing"])
         let experience2 = Experience(title: "Producer and Drummer",
                                      company: "New Immunity",
                                      dates: "June 2012 to December 2015",
                                      description: "We rocked hard and made some beautiful music. By applying marketing concepts I learned in grad school to our brand, we carved out a solid niche in Charlottesville performing electronic music with live instruments at local venues.",
-                                     components: [""])
+                                     components: ["Honed collaborative team skills and managed to coalesce competing interests within group projects",
+                                                  "Identified market gaps and led the process of developing a group brand and a business plan",
+                                                  "Independently researched media law and drafted internal band contract"])
         let experience3 = Experience(title: "Co-Founder and Management Educator",
                                      company: "BioTrep",
                                      dates: "March 2014 to December 2015",
@@ -86,16 +95,24 @@ class Life {
                                      company: "Analytic Partners",
                                      dates: "October 2014 to October 2015",
                                      description: "Grad school showed me how much fun I could have problem solving, so I sought that out in my first job after. At AP I worked on marketing strategies for Fortune 100 companies through the application of data analytics. I loved working here and learned a great deal about segmentation analysis, pricing models, and operating in a service industry at a high caliber.",
-                                     components: [""])
+                                     components: ["Developed marketing mix models, segmentation analysis, pricing models and other custom analyses to optimize marketing strategies of Fortune 500 CPG companies",
+                                                  "Partnered with clients through frequent communication to support the implementation of new business insights to improve both ROI and marketing effectiveness",
+                                                  "Worked with R&D team to implement improvements in the collection and processing of data"])
         let experience5 = Experience(title: "iOS Instructor and Developer",
                                      company: "Flatiron School",
-                                     dates: "May 2016 to Present",
-                                     description: "This has been such a rewarding experience. I work on a team to help plan the future of the school's immersive programs, write curriculum to teach iOS development from loops to subclassing OperationQueue, manage multiple teams through the development of apps released to the App Store, and constantly push the bounds of my own skills and knowledge to help students understand Swift.",
-                                     components: ["Worked on a team to help design a plan for the future of the school's immersive programs",
-                                                  "Wrote curriculum to teach iOS development from loops to subclassing OperationQueue",
+                                     dates: "May 2016 to December 2016",
+                                     description: "One of the best ways to learn a subject is to teach it, and Flatiron School provided an excellent environment to do both.",
+                                     components: ["Wrote curriculum to teach iOS development from loops to subclassing OperationQueue",
                                                   "Managed multiple teams through the development of apps released to the App Store",
+                                                  "Worked on a team to help design a plan for the future of the school's immersive programs",
                                                   "Constantly pushed the bounds of my own skills and knowledge to help students understand Swift"])
-        return [experience0, experience1, experience2, experience3, experience4, experience5]
+        let experience6 = Experience(title: "iOS Developer and Technology Strategist",
+                                     company: "Freelance",
+                                     dates: "January 2017 to Present",
+                                     description: "As a freelancer and consultant I'm able to leverage my skills in not only mobile development, but also strategic vision for business concepts and a sense for marketing products and services.",
+                                     components: ["ProathleteTV: Designed UX and UI of upcoming mobile media marketplace to connect brands and professional athletes for sponsored content deals; refined business model for mobile app and marketplace to incentivize action through use of a Dutch auction; developed and presented pitch deck to investors for seed round of funding, including high-touch onboarding strategy for new users",
+                                                  "Unreleased Dating App: Consulted on the development of a dating app built in Swift and set to be released by Valentine's Day, 2017; created custom xib-based modal view for onboarding instructions that are tracked with UserDefaults flags; managed networking and persistent awareness of network reachability through use of Alamofire framework"])
+        return [experience0, experience1, experience2, experience3, experience4, experience5, experience6]
     }
     
     func getEducation() -> [Education] {
@@ -124,6 +141,7 @@ class Life {
         let interest6 = "Making anything, especially with friends"
         return [interest0, interest1, interest2, interest3, interest4, interest5, interest6]
     }
+    
 }
 
 
@@ -211,22 +229,27 @@ extension Ian: LivesLife {
         
         self.interests.append(interest)
     }
+    
 }
 
 
 extension Ian {
+    
     func payLotsOfMoneyFor(education: Education) {
         self.education.append(education)
     }
+    
 }
 
 
 extension Ian: Person, PropertyNames, SelfPromotes {}
 
 extension PropertyNames {
+    
     func propertyNames() -> [String] {
         return Mirror(reflecting: self).children.flatMap { $0.label }
     }
+    
 }
 
 
@@ -254,6 +277,7 @@ extension SelfPromotes where Self: Person {
     func tellElevatorPitch() {
         print("I’ve always been the \"tech guy\" among my friends and family, and in a sense I always knew I’d one day be a programmer. In middle school I taught myself basic HTML and CSS to run a little website to share photos of my classmates and travels. In high school I figured out how to bypass the admin’s content blockers so we could get on Facebook and watch YouTube in the library. In college I took just enough programming courses to seriously pique my interest. Grad school taught me how to learn fast and manage both people and resources. I used those skills to start a company and fell in love with being in the trenches to build something from the ground up. When the opportunity arose I committed myself to learning to code. It’s how I put to use my passion for solving problems with creativity and analytical thinking. I’m excited to work with teams of smart, driven people to build products and platforms to bring people together and add value to the world.\n")
     }
+    
 }
 
 
@@ -265,12 +289,12 @@ fileprivate let facts: [String] = [
 ]
 
 
-// MARK: - Let's make an Ian
-func makeMe() -> Ian {
-    return Ian(name: "Ian Alexander Rahman")
+// MARK: - Make an Ian
+func makeIan(name: String = "Ian Alexander Rahman") -> Ian {
+    return Ian(named: name)
 }
 
-let ian = makeMe()
+let ian = makeIan()
 
 ian.tellElevatorPitch()
 ian.giveAutobiography()
