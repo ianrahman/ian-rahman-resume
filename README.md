@@ -6,4 +6,6 @@ If you're familiar with iOS development, you shouldn't have any trouble download
 
 Hope you enjoy!
 
-> PS- Remember to open the debugger console when you run the playground! 🚀
+> PS- Remember to open the debugger console when you run the playground 🚀
+
+> PPS- Protocols aren't a [silver bullet](http://chris.eidhof.nl/post/protocol-oriented-programming/), but I'm trying to make Crusty proud.
