@@ -41,11 +41,10 @@ class Ian {
     
 }
 
-
 class Life {
     
     func getSkills() -> [Skill] {
-        let skill0 = Skill(name: "Swift", level: .high)
+        let skill0 = Skill(name: "Swift", level: .medium)
         let skill1 = Skill(name: "Objective-C", level: .medium)
         let skill2 = Skill(name: "Project Management", level: .high)
         let skill3 = Skill(name: "Beard Growing", level: .high)
@@ -110,8 +109,9 @@ class Life {
                                      company: "Evergreen Labs",
                                      dates: "January 2017 to Present",
                                      description: "As a freelancer and consultant I'm able to leverage my skills in not only mobile development, but also strategic vision for business concepts and a sense for marketing products and services.",
-                                     components: ["ProathleteTV: Designed UX and UI of upcoming mobile media marketplace to connect brands and professional athletes for sponsored content deals; refined business model for mobile app and marketplace to incentivize action through use of a Dutch auction; developed and presented pitch deck to investors for seed round of funding, including high-touch onboarding strategy for new users",
-                                                  "Vouch App: Created custom xib-based modal view for onboarding instructions that are tracked with UserDefaults flags; developed UX flow for notification and location use requests; managed networking and persistent awareness of network reachability through use of Alamofire framework"])
+                                     components: ["ProathleteTV: Designed UX and UI of mobile media marketplace to connect brands and professional athletes for sponsored content deals; refined business model for mobile app and marketplace to incentivize action through use of a Dutch auction; developed and presented pitch deck to investors for seed round of funding, including high-touch onboarding strategy for new users",
+                                                  "Vouch: Created custom xib-based modal view for onboarding instructions that are tracked with UserDefaults flags; developed UX flow for notification and location use requests; managed networking and persistent awareness of network reachability through use of Alamofire framework; implemented app analytics through Mixpanel",
+                                                  "Airstream 2 Go: Modernized legacy Objective-C codebase for use on newer iOS devices; refactored media player to use AVFoundation framework for video and music; updated UI with modern Interface Builder tools for responsive design"])
         return [experience0, experience1, experience2, experience3, experience4, experience5, experience6]
     }
     
@@ -141,9 +141,7 @@ class Life {
         let interest6 = "Making anything, especially with friends"
         return [interest0, interest1, interest2, interest3, interest4, interest5, interest6]
     }
-    
 }
-
 
 enum Location: String {
     case unknown = "???"
@@ -151,7 +149,6 @@ enum Location: String {
     case cho = "Charlottesville, Virginia"
     case nyc = "New York City, New York"
 }
-
 
 struct Skill {
     let name: String
@@ -163,7 +160,6 @@ struct Skill {
     }
 }
 
-
 struct Experience {
     let title: String
     let company: String
@@ -173,14 +169,12 @@ struct Experience {
     let components: [String]
 }
 
-
 struct Education {
     let title: String
     let school: String
     let graduation: Int
     let description: String
 }
-
 
 protocol Person {
     var life: Life { get }
@@ -194,11 +188,9 @@ protocol Person {
     var funFact: String { get set }
 }
 
-
 protocol PropertyNames {
     func propertyNames() -> [String]
 }
-
 
 protocol LivesLife {
     mutating func learn(skill: Skill)
@@ -206,12 +198,10 @@ protocol LivesLife {
     mutating func develop(interest: String)
 }
 
-
 protocol SelfPromotes {
     func giveAutobiography()
     func tellElevatorPitch()
 }
-
 
 extension Ian: LivesLife {
     
@@ -232,7 +222,6 @@ extension Ian: LivesLife {
     
 }
 
-
 extension Ian {
     
     func payLotsOfMoneyFor(education: Education) {
@@ -240,7 +229,6 @@ extension Ian {
     }
     
 }
-
 
 extension Ian: Person, PropertyNames, SelfPromotes {}
 
@@ -251,7 +239,6 @@ extension PropertyNames {
     }
     
 }
-
 
 extension SelfPromotes where Self: Person {
     
@@ -280,14 +267,12 @@ extension SelfPromotes where Self: Person {
     
 }
 
-
 fileprivate let facts: [String] = [
     "I lived in the Amazon Rainforest for two weeks when I was sixteen.",
     "I drove the Ring Road around the coast of Iceland and spent my nights camping inland with friends.",
     "I was meatwagoned off Mt. Hood, Oregon while attending snowboarding camp in seventh grade after blowing a big jump and landing on my back.",
     "I love Nutella. Also milkshakes. (Twofer!)"
 ]
-
 
 // MARK: - Make an Ian
 func makeIan(name: String = "Ian Alexander Rahman") -> Ian {
