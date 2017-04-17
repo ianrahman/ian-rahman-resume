@@ -106,12 +106,12 @@ class Life {
                                                   "Managed multiple teams through the development of apps released to the App Store",
                                                   "Worked on a team to help design a plan for the future of the school's immersive programs",
                                                   "Constantly pushed the bounds of my own skills and knowledge to help students understand Swift"])
-        let experience6 = Experience(title: "iOS Developer and Technology Strategist",
-                                     company: "Freelance",
+        let experience6 = Experience(title: "iOS Developer and Technology Consultant",
+                                     company: "Evergreen Labs",
                                      dates: "January 2017 to Present",
                                      description: "As a freelancer and consultant I'm able to leverage my skills in not only mobile development, but also strategic vision for business concepts and a sense for marketing products and services.",
                                      components: ["ProathleteTV: Designed UX and UI of upcoming mobile media marketplace to connect brands and professional athletes for sponsored content deals; refined business model for mobile app and marketplace to incentivize action through use of a Dutch auction; developed and presented pitch deck to investors for seed round of funding, including high-touch onboarding strategy for new users",
-                                                  "Unreleased Dating App: Consulted on the development of a dating app built in Swift and set to be released by Valentine's Day, 2017; created custom xib-based modal view for onboarding instructions that are tracked with UserDefaults flags; managed networking and persistent awareness of network reachability through use of Alamofire framework"])
+                                                  "Vouch App: Created custom xib-based modal view for onboarding instructions that are tracked with UserDefaults flags; developed UX flow for notification and location use requests; managed networking and persistent awareness of network reachability through use of Alamofire framework"])
         return [experience0, experience1, experience2, experience3, experience4, experience5, experience6]
     }
     
