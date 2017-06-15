@@ -54,7 +54,7 @@ class Life {
         let skill7 = Skill(name: "Cooking", level: .medium)
         let skill8 = Skill(name: "Salsa Dancing", level: .low)
         let skill9 = Skill(name: "Digital Photography", level: .high)
-        let skill10 = Skill(name: "Sketch", level: .low)
+        let skill10 = Skill(name: "Sketch", level: .medium)
         let skill11 = Skill(name: "Trying New Things", level: .high)
         return [skill0, skill1, skill2, skill3, skill4, skill5, skill6, skill7, skill8, skill9, skill10, skill11]
     }
@@ -267,7 +267,7 @@ extension SelfPromotes where Self: Person {
     
 }
 
-fileprivate let facts: [String] = [
+private let facts: [String] = [
     "I lived in the Amazon Rainforest for two weeks when I was sixteen.",
     "I drove the Ring Road around the coast of Iceland and spent my nights camping inland with friends.",
     "I was meatwagoned off Mt. Hood, Oregon while attending snowboarding camp in seventh grade after blowing a big jump and landing on my back.",
