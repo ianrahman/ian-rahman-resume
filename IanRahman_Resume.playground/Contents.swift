@@ -1,13 +1,13 @@
-import UIKit
+import Foundation
 
 /*:
  
  # The Curriculum Vitae of Ian Alexander Rahman
  
  
- Hi! My name is Ian, and I'm an iOS developer based in New York City.
+ Hi! My name is Ian, and I'm an iOS engineer based in New York City.
  
- You can find more detailed information about my experience and education on my LinkedIn profile: https://www.linkedin.com/in/ianrahman
+ You can find more detailed information about my experience and education on LinkedIn: https://www.linkedin.com/in/ianrahman
  
  PS- Don't forget to open the debugger console when you run this code!
  
@@ -35,17 +35,17 @@ class Ian {
             for experience in life.getExperience() { self.add(experience: experience) }
             for education in life.getEducation() { self.payLotsOfMoneyFor(education: education) }
             for interest in life.becomeInteresting() { self.develop(interest: interest) }
-            self.funFact = facts[Int(arc4random_uniform(UInt32(facts.count)))]
+            self.funFact = facts[Int.random(in: 0..<facts.count)]
         }
     }
-    
+
 }
 
 class Life {
     
     func getSkills() -> [Skill] {
-        let skill0 = Skill(name: "Swift", level: .medium)
-        let skill1 = Skill(name: "Objective-C", level: .medium)
+        let skill0 = Skill(name: "iOS Development", level: .high)
+        let skill1 = Skill(name: "Swift and Objective-C", level: .medium)
         let skill2 = Skill(name: "Project Management", level: .high)
         let skill3 = Skill(name: "Beard Growing", level: .high)
         let skill4 = Skill(name: "Taking Risks", level: .medium)
@@ -54,7 +54,7 @@ class Life {
         let skill7 = Skill(name: "Cooking", level: .medium)
         let skill8 = Skill(name: "Salsa Dancing", level: .low)
         let skill9 = Skill(name: "Digital Photography", level: .high)
-        let skill10 = Skill(name: "Sketch", level: .medium)
+        let skill10 = Skill(name: "User Experience Awareness", level: .high)
         let skill11 = Skill(name: "Trying New Things", level: .high)
         return [skill0, skill1, skill2, skill3, skill4, skill5, skill6, skill7, skill8, skill9, skill10, skill11]
     }
@@ -109,10 +109,20 @@ class Life {
                                      company: "Evergreen Labs",
                                      dates: "January 2017 to Present",
                                      description: "As a freelancer and consultant I'm able to leverage my skills in not only mobile development, but also strategic vision for business concepts and a sense for marketing products and services.",
-                                     components: ["ProathleteTV: Designed UX and UI of mobile media marketplace to connect brands and professional athletes for sponsored content deals; refined business model for mobile app and marketplace to incentivize action through use of a Dutch auction; developed and presented pitch deck to investors for seed round of funding, including high-touch onboarding strategy for new users",
+                                     components: ["PAID: Designed UX and UI of mobile media marketplace to connect brands and professional athletes for sponsored content deals; refined business model for mobile app and marketplace to incentivize action through use of a Dutch auction; developed and presented pitch deck to investors for seed round of funding, including high-touch onboarding strategy for new users",
                                                   "Vouch: Created custom xib-based modal view for onboarding instructions that are tracked with UserDefaults flags; developed UX flow for notification and location use requests; managed networking and persistent awareness of network reachability through use of Alamofire framework; implemented app analytics through Mixpanel",
                                                   "Airstream 2 Go: Modernized legacy Objective-C codebase for use on newer iOS devices; refactored media player to use AVFoundation framework for video and music; updated UI with modern Interface Builder tools for responsive design"])
-        return [experience0, experience1, experience2, experience3, experience4, experience5, experience6]
+        let experience7 = Experience(title: "iOS Engineer",
+                                     company: "Vi Technologies",
+                                     dates: "August 2017 to Present",
+                                     description: "High-impact engineering in a fast-paced startup.",
+                                     components: ["Architected and led development of major redesign for Vi Trainer app to leverage modern patterns and design principles such as MVVM, POP, and coordinator-flow to improve reliability and testability",
+                                                  "Implemented asynchronous OperationQueue-based networking architecture throughout app",
+                                                  "De-integrated and replaced fragile dependency injection frameworks with clear, custom initializers and a new dependency structure",
+                                                  "Spearheaded discovery and assisted with design of new features with product and design teams",
+                                                  "Converted significant portions of Objective-C to Swift during the course of planned redesigns",
+                                                  "Identified bottlenecks in compilation and reduced build time by almost 50%"])
+        return [experience0, experience1, experience2, experience3, experience4, experience5, experience6, experience7]
     }
     
     func getEducation() -> [Education] {
@@ -132,10 +142,10 @@ class Life {
     }
     
     func becomeInteresting() -> [String] {
-        let interest0 = "Wandering city streets at night with a camera in hand"
+        let interest0 = "Wandering city streets with a camera in hand"
         let interest1 = "Hiking and camping"
-        let interest2 = "Putzing around on any instrument"
-        let interest3 = "Driving on back roads"
+        let interest2 = "Noodling around on any instrument"
+        let interest3 = "Driving back roads"
         let interest4 = "Exploring new places"
         let interest5 = "Spending time with family"
         let interest6 = "Making anything, especially with friends"
@@ -163,7 +173,6 @@ struct Skill {
 struct Experience {
     let title: String
     let company: String
-    // TODO: - Change dates type to (Date, Date)
     let dates: String
     let description: String
     let components: [String]
@@ -235,7 +244,7 @@ extension Ian: Person, PropertyNames, SelfPromotes {}
 extension PropertyNames {
     
     func propertyNames() -> [String] {
-        return Mirror(reflecting: self).children.flatMap { $0.label }
+        return Mirror(reflecting: self).children.compactMap { $0.label }
     }
     
 }
@@ -251,7 +260,7 @@ extension SelfPromotes where Self: Person {
         print("\nExperience:")
         for experience in self.experience.reversed() {
             print("    \(experience.title) at \(experience.company)\n    \(experience.dates)\n    \(experience.description)")
-            for component in experience.components { print("    + \(component)") } // Nested for loop -- gross!
+            for component in experience.components { print("    + \(component)") } // Nested for loop -- gross! O(N^2)
             print()
         }
         print("\nEducation:")
@@ -274,12 +283,15 @@ private let facts: [String] = [
     "I love Nutella. Also milkshakes. (Twofer!)"
 ]
 
-// MARK: - Make an Ian
-func makeIan(name: String = "Ian Alexander Rahman") -> Ian {
+/// Creates an Ian with the provided name.
+///
+/// - parameter name: What shall we call him?
+/// - returns: A pretty cool dude!
+func makeIan(named name: String) -> Ian {
     return Ian(named: name)
 }
 
-let ian = makeIan()
+let ian = makeIan(named: "Ian Alexander Rahman")
 
 ian.tellElevatorPitch()
 ian.giveAutobiography()
